@@ -160,6 +160,12 @@ button {
     box-shadow: 0 0.2rem hsl(154, 59%, 40%);
 }
 
+button:active,
+button:focus {
+    cursor: pointer;
+    background-color: hsl(154, 59%, 61%);
+}
+
 .disclaimer {
     font-size: calc(var(--fs-p) * 0.75);
     text-align: center;
