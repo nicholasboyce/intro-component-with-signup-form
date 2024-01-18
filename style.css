@@ -56,6 +56,7 @@ body {
     font-family: var(--ff-default);
     background-image: url(images/bg-intro-mobile.png);
     background-color: var(--clr-primary-500);
+    padding-block: min(5rem, 15vh);
 }
 
 @media (min-width: 800px) {
@@ -68,7 +69,7 @@ main {
     display: grid;
     text-align: center;
     width: min(90%, 70rem);
-    row-gap: 6rem;
+    row-gap: 3rem;
     column-gap: 4rem;
 }
 
@@ -89,31 +90,51 @@ header {
 }
 
 .pitch-title {
-    font-size: clamp(3rem, 3vw, 4rem);
+    font-size: clamp(1.75rem, 3.5vw, 4rem);
     line-height: 1.2;
     font-weight: var(--fw-bold);
 }
 
 .pitch-details {
-    font-size: clamp(0.85rem, 3vw, 0.98rem);
+    /* font-size: clamp(0.9rem, 3vw, 0.98rem); */
+    font-size: 1rem;
     color: hsl(12, 83%, 95%);
+    width: 93%;
+    margin-inline: auto;
+}
+
+@media (min-width: 600px) {
+    .pitch-details {
+        width: 100%;
+    }
 }
 
 .information-field {
-    /* width: 95%; */
     display: flex;
     flex-direction: column;
     row-gap: 1.25rem;
+}
+
+@media (min-width: 800px) {
+    .information-field {
+        width: 95%;
+    }
 }
 
 .trial {
     background-color: var(--clr-accent-700);
     border-radius: var(--br);
     text-align: center;
-    font-size: clamp(0.75rem, 2vw, 0.9rem);
-    padding: 1rem;
+    font-size: clamp(0.85rem, 2vw, 0.9rem);
+    padding: 1rem 5rem;
     color: hsl(251, 34%, 95%);
     box-shadow: var(--box-shadow);
+}
+
+@media (min-width: 600px) {
+    .trial {
+        padding: 1rem;
+    }
 }
 
 strong {
@@ -128,7 +149,7 @@ form {
     background-color: var(--clr-neutral-100);
     border-radius: var(--br);
     box-shadow: var(--box-shadow);
-    padding: 2.5rem;
+    padding: min(7vw, 2.5rem);
 }
 
 .form-fields {
@@ -136,6 +157,7 @@ form {
     padding: 0;
     display: grid;
     row-gap: 1.25rem;
+    position: relative;
 }
 
 input {
@@ -149,6 +171,24 @@ input:active {
     outline: none;
     border-color: var(--clr-accent-700);
     color: var(--clr-neutral-700);
+}
+
+input.error {
+    border: 2px solid var(--clr-primary-500);
+    color: var(--clr-primary-500);
+    position: relative;
+}
+
+form.error span::after {
+    content: '';
+    display: block;
+    background-image: url(images/icon-error.svg);
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-inline-start: auto;
+    position: absolute;
+    bottom: 2.5rem;
+    right: 2rem;
 }
 
 button {
@@ -176,4 +216,13 @@ button:focus {
 .disclaimer strong {
     color: var(--clr-primary-500);
     font-weight: var(--fw-bold);
+}
+
+span.error {
+    width: 100%;
+    text-align: right;
+    font-size: calc(var(--fs-p) * 0.75);
+    color: var(--clr-primary-500);
+    font-style: italic;
+    position: relative;
 }

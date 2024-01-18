@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
   
   <title>Frontend Mentor | Intro component with sign up form</title>
 
@@ -23,23 +24,27 @@
     </header>
     <section class="information-field">
       <h3 class="trial"><strong>Try it free 7 days</strong> then $20/mo. thereafter</h3>
-      <form action="#">
+      <form action="#" novalidate>
         <ul class="form-fields">
           <li class="form-field">
             <label for="firstName"></label>
             <input type="text" placeholder="First Name" id="firstName" required>
+            <span class="error" aria-live="polite" data-js="firstName"></span>
           </li>
           <li class="form-field">
             <label for="lastName"></label>
             <input type="text" placeholder="Last Name" id="lastName" required>
+            <span class="error" aria-live="polite" data-js="lastName"></span>
           </li>
           <li class="form-field">
             <label for="email"></label>
             <input type="email" placeholder="Email Address" id="email" required>
+            <span class="error" aria-live="polite" data-js="email"></span>
           </li>
           <li class="form-field">
             <label for="password"></label>
             <input type="password" placeholder="Password" id="password" required>
+            <span class="error" aria-live="polite" data-js="password"></span>
           </li>
           <li>
             <button>CLAIM YOUR FREE TRIAL</button>
